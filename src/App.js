@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { InputGroup, Form } from "react-bootstrap";
+import { InputGroup, Form, Button } from "react-bootstrap";
 import Style from "./Component/Style";
 import Frame from "./Component/Frame";
 import Logo from "./Component/Logo";
@@ -11,6 +11,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
+    const [isStyleComponent, setIsStyleComponent] = useState(false);
+    const [isFrameComponent, setIsFrameComponent] = useState(false);
+    const [isLogoComponent, setIsLogoComponent] = useState(false);
+
     return (
         <div className="App d-flex justify-content-between">
             <div className="bg-success-subtle col-8">
@@ -33,19 +37,29 @@ function App() {
                 </div>
 
                 <div className="d-flex">
-                    <div>
+                    <Button
+                        onClick={() => {setIsFrameComponent(true)}}
+                    >
                         <FontAwesomeIcon icon={faGrip} />
                         <div>Phong Cách</div>
-                    </div>
-                    <div>
+                    </Button>
+                    <Button
+                        onClick={() => setIsFrameComponent(true)}
+                    >
                         <FontAwesomeIcon icon={faGrip} />
                         <div>Logo</div>
-                    </div>
-                    <div>
+                    </Button>
+                    <Button
+                        onClick={() => setIsFrameComponent(true)}
+                    >
                         <FontAwesomeIcon icon={faGrip} />
                         <div>Khung</div>
-                    </div>
+                    </Button>
                 </div>
+
+                {isStyleComponent && <Style />}
+                {isFrameComponent && <Frame />}
+                {isLogoComponent && <Logo />}
             </div>
             <div className="bg-secondary-subtle col-4">sfsff</div>
         </div>
