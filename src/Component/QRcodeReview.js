@@ -5,45 +5,52 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-const QRcodeReview = ({inputUrl, checkValid}) => {
+const QRcodeReview = ({ inputUrl, checkValid }) => {
     const [url, setUrl] = useState(window.location.href)
 
     console.log(inputUrl)
 
     const isUrlValid = (url) => {
         try {
-          new URL(url);
-          return true;
+            new URL(url);
+            return true;
         } catch (error) {
-          return false;
+            return false;
         }
     };
 
     const handleConvertLinkToQRcode = () => {
-        if(inputUrl === ""){
-            checkValid(false)
+        if (inputUrl === "") {
+            checkValid(true)
             return toast.error("Trường này khong được để trống", {
                 position: "top-right",
                 autoClose: 5000,
             });
-        } else if(!isUrlValid(isUrlValid)) {
-            checkValid(false)
-            return toast.error("URL không thỏa mãn, yêu cầu nhập lại URL khác, ", {
+        } else if (!isUrlValid(inputUrl)) {
+            checkValid(true)
+            return toast.error("URL không thỏa mãn, yêu cầu nhập lại URL khác", {
                 position: "top-right",
                 autoClose: 5000,
             });
         } else {
+            checkValid(false)
             setUrl(inputUrl)
+            return toast.success("Chuyển đổi thành công ", {
+                position: "top-right",
+                autoClose: 5000,
+            });
         }
     }
 
     return (
         <div className="QRcode-container">
             <h1>QRcodeReview</h1>
-            <QRCode value={url}/>
-            <Button onClick={handleConvertLinkToQRcode}>Xác nhận</Button>
+            <div className=' d-flex flex-column align-items-center'>
+                <QRCode value={url} />
+                <Button className='mt-4' onClick={handleConvertLinkToQRcode}>Xác nhận</Button>
+            </div>
 
-            <ToastContainer position="top-right" autoClose={5000}/>
+            <ToastContainer position="top-right" autoClose={5000} />
         </div>
     )
 };
