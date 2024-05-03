@@ -23,6 +23,7 @@ function App() {
         setIsUrlValid(checkValid)
     }
 
+
     const handleMountStyleComponent = () => {
         setIsStyleComponent(true);
         setIsFrameComponent(false);
@@ -83,11 +84,11 @@ function App() {
 
                 {isStyleComponent && <Style />}
                 {isFrameComponent && <Frame />}
-                {isLogoComponent && <Logo />}
+                {isLogoComponent && <Logo logoImg={handleImageLogo}/>}
             </div>
 
             <div className="bg-secondary-subtle col-4">
-                <QRcodeReview inputUrl={url} checkValid={handleValidUrlField} />
+                <QRcodeReview  inputUrl={url} checkValid={handleValidUrlField} />
             </div>
         </div>
     );

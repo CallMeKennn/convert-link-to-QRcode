@@ -8,8 +8,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const QRcodeReview = ({ inputUrl, checkValid }) => {
     const [url, setUrl] = useState(window.location.href)
 
-    console.log(inputUrl)
-
     const isUrlValid = (url) => {
         try {
             new URL(url);
@@ -18,6 +16,7 @@ const QRcodeReview = ({ inputUrl, checkValid }) => {
             return false;
         }
     };
+
 
     const handleConvertLinkToQRcode = () => {
         if (inputUrl === "") {
@@ -51,6 +50,7 @@ const QRcodeReview = ({ inputUrl, checkValid }) => {
             </div>
 
             <ToastContainer position="top-right" autoClose={5000} />
+            {img && console.log(img)}
         </div>
     )
 };
