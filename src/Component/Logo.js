@@ -1,26 +1,37 @@
-import images from "../Assets/Images";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import closeImage from "../Assets/Images/close-images.png"
+import addImage from "../Assets/Images/add-images.png"
+import facebookLogo from "../Assets/Images/facebook-logo.png"
+import instagramLogo from "../Assets/Images/instagram-logo.png"
+import linkedinLogo from "../Assets/Images/linkedin-logo.png"
+import pinterestLogo from "../Assets/Images/pinterest-logo.png"
+import twitterLogo from "../Assets/Images/twitter-logo.png"
+import youtubeLogo from "../Assets/Images/youtube-logo.png"
+import { ImagesContext } from "./ImageProvider";
 
-const Logo = ({logoImg}) => {
+const Logo = () => {
     const [image, setImage] = useState(null);
+    
+    const {handleSetLogoImage} = useContext(ImagesContext)
+
 
     const handleImageChange = (e) => {
         const selectedImage = e.target.files[0];
         setImage(selectedImage);
-        logoImg(image)
+        handleSetLogoImage(selectedImage);
     };
 
     const handleChooseLogoImage = (logoName) => {
-        logoImg(logoName)
+        handleSetLogoImage(logoName);
     }
 
     return (
         <div className="logo-container flex">
-            <button className="">
-                <img src={images.closeImage} className="h-32 cursor-pointer bg-red-400 mt-4 mb-0" onClick={() => handleChooseLogoImage("Clear")}/>
+            <button className="w-1/12">
+                <img src={closeImage} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Clear")}/>
             </button>
-            <button className="">
-                <label htmlFor="upload-button" className="upload-button block">
+            <button className="w-1/12">
+                <label htmlFor="upload-button" className="upload-button ">
                     <input
                         onChange={handleImageChange}
                         type="file"
@@ -28,26 +39,26 @@ const Logo = ({logoImg}) => {
                         accept="image/*"
                         style={{ display: 'none' }}
                     />
-                    <img src={images.addImage} className="h-32 cursor-pointer bg-red-400 mt-4 mb-0"/>
+                    <img src={addImage} className="w-full h-auto object-cover object-center"/>
                 </label>
             </button>
-            <button >
-                <img src={images.facebookLogo} className="h-32 cursor-pointer bg-red-400 mt-4 mb-0" onClick={() => handleChooseLogoImage("Facebook")}/>
+            <button className="w-1/12">
+                <img src={facebookLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Facebook")}/>
             </button>
-            <button >
-                <img src={images.instagramLogo} className="h-32 cursor-pointer bg-red-400 mt-4 mb-0" onClick={() => handleChooseLogoImage("Instagram")}/>
+            <button className="w-1/12">
+                <img src={instagramLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Instagram")}/>
             </button>
-            <button >
-                <img src={images.linkedinLogo} className="h-32 cursor-pointer bg-red-400 mt-4 mb-0" onClick={() => handleChooseLogoImage("Linkedin")}/>
+            <button className="w-1/12">
+                <img src={linkedinLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Linkedin")}/>
             </button>
-            <button >
-                <img src={images.pinterestLogo} className="h-32 cursor-pointer bg-red-400 mt-4 mb-0" onClick={() => handleChooseLogoImage("Pinterest")}/>
+            <button className="w-1/12">
+                <img src={pinterestLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Pinterest")}/>
             </button>
-            <button >
-                <img src={images.twitterLogo} className="h-32 cursor-pointer bg-red-400 mt-4 mb-0" onClick={() => handleChooseLogoImage("Twitter")}/>
+            <button className="w-1/12">
+                <img src={twitterLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Twitter")}/>
             </button>
-            <button >
-                <img src={images.youtubeLogo} className="h-32 cursor-pointer bg-red-400 mt-4 mb-0" onClick={() => handleChooseLogoImage("Youtube")}/>
+            <button className="w-1/12">
+                <img src={youtubeLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Youtube")}/>
             </button>
         </div>
     );

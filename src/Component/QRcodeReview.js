@@ -1,12 +1,18 @@
 import { QRCode } from 'react-qrcode-logo';
-import { useEffect, useState } from 'react'
+import { useState, useContext } from 'react'
 import { Button } from "react-bootstrap"
 import { ToastContainer, toast } from 'react-toastify';
+import { ImagesContext } from "./ImageProvider";
+
 
 import 'react-toastify/dist/ReactToastify.css';
 
 const QRcodeReview = ({ inputUrl, checkValid }) => {
     const [url, setUrl] = useState(window.location.href)
+
+    const {imageUrl} = useContext(ImagesContext)
+
+    console.log(imageUrl)
 
     const isUrlValid = (url) => {
         try {
@@ -50,7 +56,6 @@ const QRcodeReview = ({ inputUrl, checkValid }) => {
             </div>
 
             <ToastContainer position="top-right" autoClose={5000} />
-            {img && console.log(img)}
         </div>
     )
 };
