@@ -1,18 +1,45 @@
 import { QRCode } from 'react-qrcode-logo';
 import { useState, useContext } from 'react'
 import { Button } from "react-bootstrap"
+
 import { ToastContainer, toast } from 'react-toastify';
 import { ImagesContext } from "./ImageProvider";
-
-
 import 'react-toastify/dist/ReactToastify.css';
+
+import facebookLogo from "../Assets/Images/facebook-logo.png"
+import instagramLogo from "../Assets/Images/instagram-logo.png"
+import linkedinLogo from "../Assets/Images/linkedin-logo.png"
+import pinterestLogo from "../Assets/Images/pinterest-logo.png"
+import twitterLogo from "../Assets/Images/twitter-logo.png"
+import youtubeLogo from "../Assets/Images/youtube-logo.png"
 
 const QRcodeReview = ({ inputUrl, checkValid }) => {
     const [url, setUrl] = useState(window.location.href)
 
-    const {imageUrl} = useContext(ImagesContext)
+    const { imageUrl, size, checked } = useContext(ImagesContext)
 
-    console.log(imageUrl)
+    const convertToImage = (image) => {
+        switch (image) {
+            case "Clear":
+                return "";
+            case "Facebook":
+                return facebookLogo;
+            case "Instagram":
+                return instagramLogo;
+            case "Linkedin":
+                return linkedinLogo;
+            case "Pinterest":
+                return pinterestLogo;
+            case "Twitter":
+                return twitterLogo;
+            case "Youtube":
+                return youtubeLogo;
+            default:
+                return URL.createObjectURL(image)
+        }
+    }
+
+    console.log(size);
 
     const isUrlValid = (url) => {
         try {
@@ -50,8 +77,8 @@ const QRcodeReview = ({ inputUrl, checkValid }) => {
     return (
         <div className="QRcode-container">
             <h1>QRcodeReview</h1>
-            <div className=' d-flex flex-column align-items-center'>
-                <QRCode value={url} />
+            <div className='d-flex flex-column align-items-center'>
+                <QRCode value={url} logoImage={imageUrl && convertToImage(imageUrl)} logoHeight={size} logoWidth={size} logoPadding={checked && 0.5}/>
                 <Button className='mt-4' onClick={handleConvertLinkToQRcode}>Xác nhận</Button>
             </div>
 

@@ -1,65 +1,126 @@
 import { useState, useContext } from "react";
-import closeImage from "../Assets/Images/close-images.png"
-import addImage from "../Assets/Images/add-images.png"
-import facebookLogo from "../Assets/Images/facebook-logo.png"
-import instagramLogo from "../Assets/Images/instagram-logo.png"
-import linkedinLogo from "../Assets/Images/linkedin-logo.png"
-import pinterestLogo from "../Assets/Images/pinterest-logo.png"
-import twitterLogo from "../Assets/Images/twitter-logo.png"
-import youtubeLogo from "../Assets/Images/youtube-logo.png"
+
+import closeImage from "../Assets/Images/close-images.png";
+import addImage from "../Assets/Images/add-images.png";
+import facebookLogo from "../Assets/Images/facebook-logo.png";
+import instagramLogo from "../Assets/Images/instagram-logo.png";
+import linkedinLogo from "../Assets/Images/linkedin-logo.png";
+import pinterestLogo from "../Assets/Images/pinterest-logo.png";
+import twitterLogo from "../Assets/Images/twitter-logo.png";
+import youtubeLogo from "../Assets/Images/youtube-logo.png";
+
 import { ImagesContext } from "./ImageProvider";
+import { Slider, Switch, FormControlLabel } from "@mui/material";
 
 const Logo = () => {
-    const [image, setImage] = useState(null);
-    
-    const {handleSetLogoImage} = useContext(ImagesContext)
-
+    const { handleSetLogoImage, handleChangeSizeLogo, handleHiddenBackgroundLogo } = useContext(ImagesContext);
 
     const handleImageChange = (e) => {
         const selectedImage = e.target.files[0];
-        setImage(selectedImage);
         handleSetLogoImage(selectedImage);
     };
 
     const handleChooseLogoImage = (logoName) => {
         handleSetLogoImage(logoName);
-    }
+    };
+
+    const handleChangeSize = (event, newValue) => {
+        handleChangeSizeLogo(newValue);
+    };
+
+    const handleChangeHiddenBackground = (e) => {
+        handleHiddenBackgroundLogo(e.target.checked);
+    };
 
     return (
-        <div className="logo-container flex">
-            <button className="w-1/12">
-                <img src={closeImage} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Clear")}/>
-            </button>
-            <button className="w-1/12">
-                <label htmlFor="upload-button" className="upload-button ">
-                    <input
-                        onChange={handleImageChange}
-                        type="file"
-                        id="upload-button"
-                        accept="image/*"
-                        style={{ display: 'none' }}
+        <div className="logo-containe mt-7">
+            <div className="flex ml-4">
+                <button className="w-1/12 p-2 border border-black m-0">
+                    <img
+                        src={closeImage}
+                        className="w-full h-auto object-cover object-center"
+                        onClick={() => handleChooseLogoImage("Clear")}
                     />
-                    <img src={addImage} className="w-full h-auto object-cover object-center"/>
-                </label>
-            </button>
-            <button className="w-1/12">
-                <img src={facebookLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Facebook")}/>
-            </button>
-            <button className="w-1/12">
-                <img src={instagramLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Instagram")}/>
-            </button>
-            <button className="w-1/12">
-                <img src={linkedinLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Linkedin")}/>
-            </button>
-            <button className="w-1/12">
-                <img src={pinterestLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Pinterest")}/>
-            </button>
-            <button className="w-1/12">
-                <img src={twitterLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Twitter")}/>
-            </button>
-            <button className="w-1/12">
-                <img src={youtubeLogo} className="w-full h-auto object-cover object-center" onClick={() => handleChooseLogoImage("Youtube")}/>
-            </button>
+                </button>
+                <button className="w-1/12 p-2 border border-black m-0">
+                    <label htmlFor="upload-button" className="upload-button ">
+                        <input
+                            onChange={handleImageChange}
+                            type="file"
+                            id="upload-button"
+                            accept="image/*"
+                            style={{ display: "none" }}
+                        />
+                        <img src={addImage} className="w-full h-auto object-cover object-center" />
+                    </label>
+                </button>
+                <button className="w-1/12 p-2 border border-black m-0">
+                    <img
+                        src={facebookLogo}
+                        className="w-full h-auto object-cover object-center"
+                        onClick={() => handleChooseLogoImage("Facebook")}
+                    />
+                </button>
+                <button className="w-1/12 p-2 border border-black m-0">
+                    <img
+                        src={instagramLogo}
+                        className="w-full h-auto object-cover object-center"
+                        onClick={() => handleChooseLogoImage("Instagram")}
+                    />
+                </button>
+                <button className="w-1/12 p-2 border border-black m-0">
+                    <img
+                        src={linkedinLogo}
+                        className="w-full h-auto object-cover object-center"
+                        onClick={() => handleChooseLogoImage("Linkedin")}
+                    />
+                </button>
+                <button className="w-1/12 p-2 border border-black m-0">
+                    <img
+                        src={pinterestLogo}
+                        className="w-full h-auto object-cover object-center"
+                        onClick={() => handleChooseLogoImage("Pinterest")}
+                    />
+                </button>
+                <button className="w-1/12 p-2 border border-black m-0">
+                    <img
+                        src={twitterLogo}
+                        className="w-full h-auto object-cover object-center"
+                        onClick={() => handleChooseLogoImage("Twitter")}
+                    />
+                </button>
+                <button className="w-1/12 p-2 border border-black m-0">
+                    <img
+                        src={youtubeLogo}
+                        className="w-full h-auto object-cover object-center"
+                        onClick={() => handleChooseLogoImage("Youtube")}
+                    />
+                </button>
+            </div>
+
+            <div>
+                <FormControlLabel
+                    className="mr-0"
+                    value="start"
+                    control={<Switch onChange={handleChangeHiddenBackground} />}
+                    label="Ẩn dấu chấm nền"
+                    labelPlacement="start"
+                />
+            </div>
+
+            <div className="w-1/2 ml-4">
+                <div>Kích thước logo</div>
+                <Slider
+                    onChange={handleChangeSize}
+                    aria-label="sizeLogo"
+                    defaultValue={40}
+                    valueLabelDisplay="auto"
+                    step={10}
+                    marks
+                    min={30}
+                    max={60}
+                />
+            </div>
         </div>
     );
 };

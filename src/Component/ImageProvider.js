@@ -4,12 +4,22 @@ export const ImagesContext = createContext();
 
 const ImagesProvider = ({ children }) => {
     const [imageUrl, setImageUrl] = useState(null);
+    const [size, setSize] = useState(null)
+    const [checked, setChecked] = useState(true)
 
     const handleSetLogoImage = (imageUrl) => {
         setImageUrl(imageUrl);
     };
 
-    return <ImagesContext.Provider value={{ imageUrl, handleSetLogoImage }}>{children}</ImagesContext.Provider>;
+    const handleChangeSizeLogo = (newSize) => {
+        setSize(newSize)
+    }
+
+    const handleHiddenBackgroundLogo = (hidden) => {
+        setChecked(hidden)
+    }
+
+    return <ImagesContext.Provider value={{ imageUrl, size, checked, handleSetLogoImage, handleChangeSizeLogo, handleHiddenBackgroundLogo }}>{children}</ImagesContext.Provider>;
 };
 
 export default ImagesProvider;

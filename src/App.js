@@ -6,6 +6,7 @@ import Logo from "./Component/Logo";
 import QRcodeReview from "./Component/QRcodeReview";
 
 import { faGrip } from "@fortawesome/free-solid-svg-icons";
+import { TextField } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ImagesProvider from "./Component/ImageProvider";
 
@@ -47,20 +48,24 @@ function App() {
             <ImagesProvider>
                 <div className="col-8 bg-success-subtle">
                     <div className="col-12 d-flex flex-column align-items-center">
-                        <h1 className="text-orange-800">QR Code Generator</h1>
+                        <h1 className=" ">QR Code Generator</h1>
                         <div className="col-10">
-                            <InputGroup className="mb-3 col-10">
-                                <InputGroup.Text id="inputGroup-sizing-default">Name</InputGroup.Text>
-                                <Form.Control className="mw-100" placeholder="Đặt tên cho mã QR của bạn" />
-                            </InputGroup>
-                            <InputGroup className="mb-5 col-10">
-                                <InputGroup.Text id="inputGroup-sizing-default">URL</InputGroup.Text>
-                                <Form.Control
-                                    className={`mw-100 ${isUrlValid ? "border border-danger border-2" : ""}`}
-                                    onChange={(e) => setUrl(e.target.value)}
-                                    placeholder="Đặt liên kết của bạn vào đây"
-                                />
-                            </InputGroup>
+                            <TextField
+                                fullWidth
+                                id="outlined-basic"
+                                label="Name"
+                                className="mw-100 mb-4 col-10"
+                                placeholder="Đặt tên cho mã QR của bạn"
+                            />
+                            <TextField
+                                {...(isUrlValid ? { error: true } : {})}
+                                className="mw-100 mb-3 col-10"
+                                onChange={(e) => setUrl(e.target.value)}
+                                placeholder="Đặt liên kết của bạn vào đây"
+                                fullWidth
+                                id="outlined-basic"
+                                label="URL"
+                            />
                         </div>
 
                         <div className="d-flex col-4 bg-danger d-flex justify-content-around">
