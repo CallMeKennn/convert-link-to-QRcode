@@ -115,7 +115,7 @@ const Logo = () => {
                     aria-label="sizeLogo"
                     defaultValue={40}
                     valueLabelDisplay="auto"
-                    step={10}
+                    step={5}
                     marks
                     min={30}
                     max={60}
