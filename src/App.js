@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { InputGroup, Form, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Style from "./Component/Style";
 import Frame from "./Component/Frame";
 import Logo from "./Component/Logo";
 import QRcodeReview from "./Component/QRcodeReview";
 
 import { faGrip } from "@fortawesome/free-solid-svg-icons";
-import { TextField } from "@mui/material";
+import { TextField, Box } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ImagesProvider from "./Component/ImageProvider";
 
@@ -49,24 +49,29 @@ function App() {
                 <div className="col-8 bg-success-subtle">
                     <div className="col-12 d-flex flex-column align-items-center">
                         <h1 className=" ">QR Code Generator</h1>
-                        <div className="col-10">
+                        <Box
+                            sx={{
+                                width: 800,
+                                maxWidth: "100%",
+                            }}
+                        >
                             <TextField
                                 fullWidth
                                 id="outlined-basic"
                                 label="Name"
-                                className="mw-100 mb-4 col-10"
+                                className="mb-4"
                                 placeholder="Đặt tên cho mã QR của bạn"
                             />
                             <TextField
                                 {...(isUrlValid ? { error: true } : {})}
-                                className="mw-100 mb-3 col-10"
+                                className="mb-3"
                                 onChange={(e) => setUrl(e.target.value)}
                                 placeholder="Đặt liên kết của bạn vào đây"
                                 fullWidth
                                 id="outlined-basic"
                                 label="URL"
                             />
-                        </div>
+                        </Box>
 
                         <div className="d-flex col-4 bg-danger d-flex justify-content-around">
                             <Button onClick={handleMountStyleComponent}>
