@@ -44,58 +44,55 @@ function App() {
     };
 
     return (
-        <div className="App d-flex justify-content-betwee">
+        <div className="App flex justify-center">
             <ImagesProvider>
-                <div className="col-8 bg-success-subtle">
-                    <div className="col-12 d-flex flex-column align-items-center">
-                        <h1 className=" ">QR Code Generator</h1>
-                        <Box
-                            sx={{
-                                width: 800,
-                                maxWidth: "100%",
-                            }}
-                        >
-                            <TextField
-                                fullWidth
-                                id="outlined-basic"
-                                label="Name"
-                                className="mb-4"
-                                placeholder="Đặt tên cho mã QR của bạn"
-                            />
-                            <TextField
-                                {...(isUrlValid ? { error: true } : {})}
-                                className="mb-3"
-                                onChange={(e) => setUrl(e.target.value)}
-                                placeholder="Đặt liên kết của bạn vào đây"
-                                fullWidth
-                                id="outlined-basic"
-                                label="URL"
-                            />
-                        </Box>
+                <div className="w-4/5 flex">
+                    <div className="col-8 bg-success-subtle">
+                        <div className="d-flex flex-column align-items-center">
+                            <h1 className=" ">QR Code Generator</h1>
+                            <div className="w-4/5">
+                                <TextField
+                                    fullWidth
+                                    id="outlined-basic"
+                                    label="Name"
+                                    className="mb-4 col-10"
+                                    placeholder="Đặt tên cho mã QR của bạn"
+                                />
+                                <TextField
+                                    {...(isUrlValid ? { error: true } : {})}
+                                    className="mb-3 col-10"
+                                    onChange={(e) => setUrl(e.target.value)}
+                                    placeholder="Đặt liên kết của bạn vào đây"
+                                    fullWidth
+                                    id="outlined-basic"
+                                    label="URL"
+                                />
+                            </div>
 
-                        <div className="d-flex col-4 bg-danger d-flex justify-content-around">
-                            <Button onClick={handleMountStyleComponent}>
-                                <FontAwesomeIcon icon={faGrip} />
-                                <div>Phong Cách</div>
-                            </Button>
-                            <Button onClick={handleMountLogoComponent}>
-                                <FontAwesomeIcon icon={faGrip} />
-                                <div>Logo</div>
-                            </Button>
-                            <Button onClick={handleMountFrameComponent}>
-                                <FontAwesomeIcon icon={faGrip} />
-                                <div>Khung</div>
-                            </Button>
+                            <div className="d-flex col-4 bg-danger d-flex justify-content-around">
+                                <Button onClick={handleMountStyleComponent}>
+                                    <FontAwesomeIcon icon={faGrip} />
+                                    <div>Phong Cách</div>
+                                </Button>
+                                <Button onClick={handleMountLogoComponent}>
+                                    <FontAwesomeIcon icon={faGrip} />
+                                    <div>Logo</div>
+                                </Button>
+                                <Button onClick={handleMountFrameComponent}>
+                                    <FontAwesomeIcon icon={faGrip} />
+                                    <div>Khung</div>
+                                </Button>
+                            </div>
                         </div>
+
+                        {isStyleComponent && <Style />}
+                        {isFrameComponent && <Frame />}
+                        {isLogoComponent && <Logo />}
                     </div>
 
-                    {isStyleComponent && <Style />}
-                    {isFrameComponent && <Frame />}
-                    {isLogoComponent && <Logo />}
-                </div>
-
-                <div className="bg-secondary-subtle col-4">
-                    <QRcodeReview inputUrl={url} checkValid={handleValidUrlField} />
+                    <div className="bg-secondary-subtle col-4">
+                        <QRcodeReview inputUrl={url} checkValid={handleValidUrlField} />
+                    </div>
                 </div>
             </ImagesProvider>
         </div>

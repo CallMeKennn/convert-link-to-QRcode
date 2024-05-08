@@ -16,7 +16,7 @@ import youtubeLogo from "../Assets/Images/youtube-logo.png";
 const QRcodeReview = ({ inputUrl, checkValid }) => {
     const [url, setUrl] = useState(window.location.href);
 
-    const { imageUrl, size, checked, qrStyle } = useContext(ImagesContext);
+    const { imageUrl, size, checked, qrStyle, borderEye, eye, color } = useContext(ImagesContext);
 
     const convertToImage = (image) => {
         switch (image) {
@@ -84,12 +84,11 @@ const QRcodeReview = ({ inputUrl, checkValid }) => {
                     logoWidth={size}
                     logoPadding={checked && 0.5}
                     qrStyle={qrStyle}
-                    eyeRadius={
-                        {
-                            outer: 15,
-                            inner: 0,
-                        }
-                    }
+                    eyeRadius={{
+                        outer: borderEye,
+                        inner: eye,
+                    }}
+                    fgColor={color}
                 />
                 <Button className="mt-4" onClick={handleConvertLinkToQRcode}>
                     Xác nhận

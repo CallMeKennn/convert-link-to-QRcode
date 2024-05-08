@@ -23,7 +23,6 @@
     "react-qrcode-logo": "^2.10.0",
     "react-scripts": "^5.0.1",
     "react-toastify": "^10.0.5",
-    "svg-png-converter": "^0.0.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

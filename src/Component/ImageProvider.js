@@ -9,6 +9,7 @@ const ImagesProvider = ({ children }) => {
     const [qrStyle, setQrStyle] = useState("squares");
     const [borderEye, setBorderEye] = useState(0)
     const [eye, setEye] = useState(0)
+    const [color, setColor] = useState("#000000")
 
     const handleSetLogoImage = (imageUrl) => {
         setImageUrl(imageUrl);
@@ -27,11 +28,15 @@ const ImagesProvider = ({ children }) => {
     };
 
     const handleChangeBorderQrStyle = (typeBorder) => {
-        setBorderEye(styleBorder)
+        setBorderEye(typeBorder)
     }
 
     const handleChangeEyeStyle = (typeEye) => {
-        setEye(typeBorder)
+        setEye(typeEye)
+    }
+
+    const handleChangeColor = (color) => {
+        setColor(color)
     }
 
     return (
@@ -42,11 +47,15 @@ const ImagesProvider = ({ children }) => {
                 checked,
                 qrStyle,
                 borderEye,
+                eye,
+                color,
                 handleSetLogoImage,
                 handleChangeSizeLogo,
                 handleHiddenBackgroundLogo,
                 handleChangeQrStyle,
                 handleChangeBorderQrStyle,
+                handleChangeEyeStyle,
+                handleChangeColor,
             }}
         >
             {children}
