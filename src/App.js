@@ -63,12 +63,12 @@ function App() {
                             <div className="d-flex col-4 d-flex justify-content-around text-lg">
                                 <button onClick={handleMountStyleComponent}>
                                     <FontAwesomeIcon icon={faGrip} />
-                                    <div>Phong Cách</div>
+                                    <div className="font-robotoCondensed">Phong Cách</div>
                                 </button>
                                 <div className="w-0.5 bg-gray-400"></div>
                                 <button onClick={handleMountLogoComponent}>
                                     <FontAwesomeIcon icon={faGrip} />
-                                    <div>Logo</div>
+                                    <div className="font-robotoCondensed">Logo</div>
                                 </button>
                             </div>
                         </div>

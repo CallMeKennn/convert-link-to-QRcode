@@ -24,7 +24,7 @@ const Style = () => {
     return (
         <div className="style-container flex flex-col items-center">
             <div className="mt-2 w-4/5 m-auto">
-                <div className="text-lg">Mẫu:</div>
+                <div className="text-lg font-robotoCondensed">Mẫu:</div>
                 <div className="flex">
                     <button
                         className="w-16 p-2 border border-l-transparent border-black"
@@ -47,7 +47,7 @@ const Style = () => {
                 </div>
             </div>
             <div className="mt-2 w-4/5 m-auto">
-                <div className="text-lg">Phong cách góc:</div>
+                <div className="text-lg font-robotoCondensed">Phong cách góc:</div>
                 <button
                     className="w-16 p-2 border border-l-transparent border-black"
                     onClick={() => handleChangeBorderQrStyle(0)}
@@ -83,7 +83,7 @@ const Style = () => {
 
             <div className="mt-2 w-4/5 m-auto flex justify-between">
                 <div className="w-full">
-                    <div className="text-lg">Màu hoa văn:</div>
+                    <div className="text-lg font-robotoCondensed">Màu hoa văn:</div>
                     <input
                         type="color"
                         id="colorPicker"
