@@ -1,44 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-.App{
-  padding: 2rem 1rem;
-}
-
-h1{
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-input{
-  appearance: none;
-  outline: none;
-  background: #EEE;
-  width: 100%;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  margin-right: 1rem;
-}
-
-button, a {
-  appearance: none;
-  outline: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: #2bcb4b;
-  font-size: 1.5rem;
-  line-height: 1;
-  text-decoration: none;
-}
-
-img {
-	display: block;
-	width: 480px;
-	height: 480px;
-	margin: 2rem auto;
+.box-shadow {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }

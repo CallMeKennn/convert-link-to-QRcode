@@ -10,6 +10,7 @@ const ImagesProvider = ({ children }) => {
     const [borderEye, setBorderEye] = useState(0)
     const [eye, setEye] = useState(0)
     const [color, setColor] = useState("#000000")
+    const [bgColor, setBgColor] = useState("#FFFFFF")
 
     const handleSetLogoImage = (imageUrl) => {
         setImageUrl(imageUrl);
@@ -39,6 +40,10 @@ const ImagesProvider = ({ children }) => {
         setColor(color)
     }
 
+    const handleChangeColorBackground = (backgroundColor) => {
+        setBgColor(backgroundColor)
+    }
+
     return (
         <ImagesContext.Provider
             value={{
@@ -49,6 +54,7 @@ const ImagesProvider = ({ children }) => {
                 borderEye,
                 eye,
                 color,
+                bgColor,
                 handleSetLogoImage,
                 handleChangeSizeLogo,
                 handleHiddenBackgroundLogo,
@@ -56,6 +62,7 @@ const ImagesProvider = ({ children }) => {
                 handleChangeBorderQrStyle,
                 handleChangeEyeStyle,
                 handleChangeColor,
+                handleChangeColorBackground,
             }}
         >
             {children}

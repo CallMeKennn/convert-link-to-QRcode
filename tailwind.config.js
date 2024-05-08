@@ -2,7 +2,11 @@
 module.exports = {
     content: ["./src/**/*.{html,js}"],
     theme: {
-      extend: {},
+        extend: {
+            fontFamily: {
+                robotoCondensed: ["Roboto Condensed", "sans-serif"],
+            },
+        },
     },
     plugins: [],
-  }
+};

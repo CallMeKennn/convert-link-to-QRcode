@@ -34,15 +34,15 @@ const Logo = () => {
 
     return (
         <div className="logo-containe mt-7">
-            <div className="flex ml-4">
-                <button className="w-1/12 p-2 border border-black ">
+            <div className="flex ml-4 w-4/5">
+                <button className="w-2/12 p-2 border border-black ">
                     <img
                         src={closeImage}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Clear")}
                     />
                 </button>
-                <button className="w-1/12 p-2 border border-black ">
+                <button className="w-2/12 p-2 border border-black ">
                     <label htmlFor="upload-button" className="upload-button ">
                         <input
                             onChange={handleImageChange}
@@ -54,42 +54,42 @@ const Logo = () => {
                         <img src={addImage} className="w-full h-auto object-cover object-center m-0" />
                     </label>
                 </button>
-                <button className="w-1/12 p-2 border border-black ">
+                <button className="w-2/12 p-2 border border-black ">
                     <img
                         src={facebookLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Facebook")}
                     />
                 </button>
-                <button className="w-1/12 p-2 border border-black ">
+                <button className="w-2/12 p-2 border border-black ">
                     <img
                         src={instagramLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Instagram")}
                     />
                 </button>
-                <button className="w-1/12 p-2 border border-black ">
+                <button className="w-2/12 p-2 border border-black ">
                     <img
                         src={linkedinLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Linkedin")}
                     />
                 </button>
-                <button className="w-1/12 p-2 border border-black ">
+                <button className="w-2/12 p-2 border border-black ">
                     <img
                         src={pinterestLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Pinterest")}
                     />
                 </button>
-                <button className="w-1/12 p-2 border border-black ">
+                <button className="w-2/12 p-2 border border-black ">
                     <img
                         src={twitterLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Twitter")}
                     />
                 </button>
-                <button className="w-1/12 p-2 border border-black ">
+                <button className="w-2/12 p-2 border border-black ">
                     <img
                         src={youtubeLogo}
                         className="w-full h-auto object-cover object-center m-0"

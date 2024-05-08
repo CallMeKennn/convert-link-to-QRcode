@@ -1,5 +1,5 @@
 import { QRCode } from "react-qrcode-logo";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { Button } from "react-bootstrap";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -13,10 +13,11 @@ import pinterestLogo from "../Assets/Images/pinterest-logo.png";
 import twitterLogo from "../Assets/Images/twitter-logo.png";
 import youtubeLogo from "../Assets/Images/youtube-logo.png";
 
-const QRcodeReview = ({ inputUrl, checkValid }) => {
+const QRcodeReview = ({ inputUrl, checkValid, nameDownload }) => {
+    const imageRef = useRef(null);
     const [url, setUrl] = useState(window.location.href);
 
-    const { imageUrl, size, checked, qrStyle, borderEye, eye, color } = useContext(ImagesContext);
+    const { imageUrl, size, checked, qrStyle, borderEye, eye, color, bgColor } = useContext(ImagesContext);
 
     const convertToImage = (image) => {
         switch (image) {
@@ -37,6 +38,18 @@ const QRcodeReview = ({ inputUrl, checkValid }) => {
             default:
                 return URL.createObjectURL(image);
         }
+    };
+
+    const handleDownloadImageQRcode = () => {
+        const canvas = imageRef.current;
+        const imageDataURL = canvas.canvas.current.toDataURL("image/png");
+        console.log(imageDataURL);
+        const link = document.createElement("a");
+        link.href = imageDataURL;
+        link.download = `${nameDownload || "anhQRcode"}.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     console.log(size);
@@ -75,9 +88,10 @@ const QRcodeReview = ({ inputUrl, checkValid }) => {
 
     return (
         <div className="QRcode-container">
-            <h1>QRcodeReview</h1>
+            <h1 className="text-center font-robotoCondensed">Xem trước</h1>
             <div className="d-flex flex-column align-items-center">
                 <QRCode
+                    ref={imageRef}
                     value={url}
                     logoImage={imageUrl && convertToImage(imageUrl)}
                     logoHeight={size}
@@ -89,10 +103,18 @@ const QRcodeReview = ({ inputUrl, checkValid }) => {
                         inner: eye,
                     }}
                     fgColor={color}
+                    bgColor={bgColor}
                 />
-                <Button className="mt-4" onClick={handleConvertLinkToQRcode}>
-                    Xác nhận
-                </Button>
+                <div className="w-full flex flex-row justify-around bg-white">
+                    <Button className="mt-4" onClick={handleConvertLinkToQRcode}>
+                        Xác nhận
+                    </Button>
+                    <Button className="mt-4" onClick={handleDownloadImageQRcode}>
+                        {/* <a href={url} download={`${nameDownload || "anhQRcode"}.png`} className="no-underline text-white"> */}
+                        Download
+                        {/* </a> */}
+                    </Button>
+                </div>
             </div>
 
             <ToastContainer position="top-right" autoClose={5000} />

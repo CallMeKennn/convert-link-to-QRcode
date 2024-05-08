@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 import Style from "./Component/Style";
-import Frame from "./Component/Frame";
 import Logo from "./Component/Logo";
 import QRcodeReview from "./Component/QRcodeReview";
 
@@ -15,8 +13,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
-    const [isStyleComponent, setIsStyleComponent] = useState(false);
-    const [isFrameComponent, setIsFrameComponent] = useState(false);
+    const [nameDownload, setNameDownload] = useState("")
+    const [isStyleComponent, setIsStyleComponent] = useState(true);
     const [isLogoComponent, setIsLogoComponent] = useState(false);
     const [isUrlValid, setIsUrlValid] = useState(false);
     const [url, setUrl] = useState("");
@@ -27,35 +25,28 @@ function App() {
 
     const handleMountStyleComponent = () => {
         setIsStyleComponent(true);
-        setIsFrameComponent(false);
         setIsLogoComponent(false);
     };
 
     const handleMountLogoComponent = () => {
         setIsStyleComponent(false);
-        setIsFrameComponent(false);
         setIsLogoComponent(true);
     };
 
-    const handleMountFrameComponent = () => {
-        setIsStyleComponent(false);
-        setIsFrameComponent(true);
-        setIsLogoComponent(false);
-    };
-
     return (
-        <div className="App flex justify-center">
+        <div className="App flex justify-center bg-[#EEEEEE] h-screen">
             <ImagesProvider>
-                <div className="w-4/5 flex">
-                    <div className="col-8 bg-success-subtle">
+                <div className="w-4/5 flex justify-around py-8 px-4">
+                    <div className="col-8 bg-white px-8 pt-4 pb-8 rounded box-shadow">
                         <div className="d-flex flex-column align-items-center">
-                            <h1 className=" ">QR Code Generator</h1>
+                            <h1 className="font-robotoCondensed mb-3">Chuyển đổi Link sang mã QR code</h1>
                             <div className="w-4/5">
                                 <TextField
                                     fullWidth
                                     id="outlined-basic"
                                     label="Name"
                                     className="mb-4 col-10"
+                                    onChange={(e) => setNameDownload(e.target.value)}
                                     placeholder="Đặt tên cho mã QR của bạn"
                                 />
                                 <TextField
@@ -69,29 +60,25 @@ function App() {
                                 />
                             </div>
 
-                            <div className="d-flex col-4 bg-danger d-flex justify-content-around">
-                                <Button onClick={handleMountStyleComponent}>
+                            <div className="d-flex col-4 d-flex justify-content-around text-lg">
+                                <button onClick={handleMountStyleComponent}>
                                     <FontAwesomeIcon icon={faGrip} />
                                     <div>Phong Cách</div>
-                                </Button>
-                                <Button onClick={handleMountLogoComponent}>
+                                </button>
+                                <div className="w-0.5 bg-gray-400"></div>
+                                <button onClick={handleMountLogoComponent}>
                                     <FontAwesomeIcon icon={faGrip} />
                                     <div>Logo</div>
-                                </Button>
-                                <Button onClick={handleMountFrameComponent}>
-                                    <FontAwesomeIcon icon={faGrip} />
-                                    <div>Khung</div>
-                                </Button>
+                                </button>
                             </div>
                         </div>
 
                         {isStyleComponent && <Style />}
-                        {isFrameComponent && <Frame />}
                         {isLogoComponent && <Logo />}
                     </div>
 
-                    <div className="bg-secondary-subtle col-4">
-                        <QRcodeReview inputUrl={url} checkValid={handleValidUrlField} />
+                    <div className="col-3 px-8 pt-4 pb-8 bg-white box-shadow h-2/3">
+                        <QRcodeReview nameDownload={nameDownload} inputUrl={url} checkValid={handleValidUrlField} />
                     </div>
                 </div>
             </ImagesProvider>
