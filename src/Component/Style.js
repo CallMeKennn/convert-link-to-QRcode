@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useConteaxt } from "react";
 
 import squaresImage from "../Assets/Images/squares.png";
 import dotsImage from "../Assets/Images/dots.png";
@@ -30,19 +30,19 @@ const Style = () => {
                         className="w-16 p-2 border border-l-transparent border-black"
                         onClick={() => handleChangeQrStyle("squares")}
                     >
-                        <img src={squaresImage} className="w-full h-auto object-cover object-center m-0" />
+                        <img src={squaresImage} className="w-full h-auto object-cover object-center m-0" alt="squaresImage"/>
                     </button>
                     <button
                         className="w-16 p-2 border border-l-transparent border-black"
                         onClick={() => handleChangeQrStyle("dots")}
                     >
-                        <img src={dotsImage} className="w-full h-auto object-cover object-center m-0" />
+                        <img src={dotsImage} className="w-full h-auto object-cover object-center m-0" alt="dotsImage"/>
                     </button>
                     <button
                         className="w-16 p-2 border border-l-transparent border-black"
                         onClick={() => handleChangeQrStyle("fluid")}
                     >
-                        <img src={fluidImage} className="w-full h-auto object-cover object-center m-0" />
+                        <img src={fluidImage} className="w-full h-auto object-cover object-center m-0" alt="fluidImage"/>
                     </button>
                 </div>
             </div>
@@ -52,32 +52,32 @@ const Style = () => {
                     className="w-16 p-2 border border-l-transparent border-black"
                     onClick={() => handleChangeBorderQrStyle(0)}
                 >
-                    <img src={borderSquareEye} className="w-full h-auto object-cover object-center m-0" />
+                    <img src={borderSquareEye} className="w-full h-auto object-cover object-center m-0" alt="borderSquareEye"/>
                 </button>
                 <button
                     className="w-16 p-2 border border-l-transparent border-black"
                     onClick={() => handleChangeBorderQrStyle(10)}
                 >
-                    <img src={borderHaflEye} className="w-full h-auto object-cover object-center m-0" />
+                    <img src={borderHaflEye} className="w-full h-auto object-cover object-center m-0" alt="borderHaflEye"/>
                 </button>
                 <button
                     className="w-16 p-2 border border-l-transparent border-black"
                     onClick={() => handleChangeBorderQrStyle(20)}
                 >
-                    <img src={borderCircleEye} className="w-full h-auto object-cover object-center m-0" />
+                    <img src={borderCircleEye} className="w-full h-auto object-cover object-center m-0" alt="borderCircleEye"/>
                 </button>
 
                 <button
                     className="w-16 p-2 border border-l-transparent border-black"
                     onClick={() => handleChangeEyeStyle(20)}
                 >
-                    <img src={circleEye} className="w-full h-auto object-cover object-center m-0" />
+                    <img src={circleEye} className="w-full h-auto object-cover object-center m-0" alt="circleEye"/>
                 </button>
                 <button
                     className="w-16 p-2 border border-l-transparent border-black"
                     onClick={() => handleChangeEyeStyle(0)}
                 >
-                    <img src={squareEye} className="w-full h-auto object-cover object-center m-0" />
+                    <img src={squareEye} className="w-full h-auto object-cover object-center m-0" alt="squareEye"/>
                 </button>
             </div>
 

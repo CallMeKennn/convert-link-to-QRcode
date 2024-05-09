@@ -40,6 +40,7 @@ const Logo = () => {
                         src={closeImage}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Clear")}
+                        alt="Close Image"
                     />
                 </button>
                 <button className="w-2/12 p-2 border border-black ">
@@ -51,7 +52,8 @@ const Logo = () => {
                             accept="image/*"
                             style={{ display: "none" }}
                         />
-                        <img src={addImage} className="w-full h-auto object-cover object-center m-0" />
+                        <img src={addImage} className="w-full h-auto object-cover object-center m-0" 
+                        alt="Add Image"/>
                     </label>
                 </button>
                 <button className="w-2/12 p-2 border border-black ">
@@ -59,6 +61,7 @@ const Logo = () => {
                         src={facebookLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Facebook")}
+                        alt="Facebook"
                     />
                 </button>
                 <button className="w-2/12 p-2 border border-black ">
@@ -66,6 +69,7 @@ const Logo = () => {
                         src={instagramLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Instagram")}
+                        alt="Instagram"
                     />
                 </button>
                 <button className="w-2/12 p-2 border border-black ">
@@ -73,6 +77,7 @@ const Logo = () => {
                         src={linkedinLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Linkedin")}
+                        alt="LinkedIn"
                     />
                 </button>
                 <button className="w-2/12 p-2 border border-black ">
@@ -80,6 +85,7 @@ const Logo = () => {
                         src={pinterestLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Pinterest")}
+                        alt="Pinterest"
                     />
                 </button>
                 <button className="w-2/12 p-2 border border-black ">
@@ -87,6 +93,7 @@ const Logo = () => {
                         src={twitterLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Twitter")}
+                        alt="Twitter"
                     />
                 </button>
                 <button className="w-2/12 p-2 border border-black ">
@@ -94,6 +101,7 @@ const Logo = () => {
                         src={youtubeLogo}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Youtube")}
+                        alt="Youtube"
                     />
                 </button>
             </div>
