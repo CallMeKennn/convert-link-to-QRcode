@@ -40,7 +40,7 @@ const Logo = () => {
                         src={closeImage}
                         className="w-full h-auto object-cover object-center m-0"
                         onClick={() => handleChooseLogoImage("Clear")}
-                        alt="Close Image"
+                        alt="Close"
                     />
                 </button>
                 <button className="w-2/12 p-2 border border-black ">
@@ -53,7 +53,7 @@ const Logo = () => {
                             style={{ display: "none" }}
                         />
                         <img src={addImage} className="w-full h-auto object-cover object-center m-0" 
-                        alt="Add Image"/>
+                        alt="Add"/>
                     </label>
                 </button>
                 <button className="w-2/12 p-2 border border-black ">
