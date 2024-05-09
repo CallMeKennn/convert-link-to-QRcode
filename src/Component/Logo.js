@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 
 import closeImage from "../Assets/Images/close-images.png";
 import addImage from "../Assets/Images/add-images.png";
