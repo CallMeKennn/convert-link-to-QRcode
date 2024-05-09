@@ -93,7 +93,7 @@ const Style = () => {
                     />
                 </div>
                 <div className="w-full">
-                    <div className="text-lg">Màu nền hoa văn:</div>
+                    <div className="text-lg font-robotoCondensed">Màu nền hoa văn:</div>
                     <input
                         value={bgColor}
                         type="color"

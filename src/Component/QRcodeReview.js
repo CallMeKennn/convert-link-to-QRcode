@@ -88,8 +88,8 @@ const QRcodeReview = ({ inputUrl, checkValid, nameDownload }) => {
 
     return (
         <div className="QRcode-container">
-            <h1 className="text-center font-robotoCondensed">Xem trước</h1>
-            <div className="d-flex flex-column align-items-center">
+            <h1 className="text-center font-robotoCondensed">XEM TRƯỚC</h1>
+            <div className="w-full flex flex-column items-center flex-wrap">
                 <QRCode
                     ref={imageRef}
                     value={url}
@@ -105,15 +105,13 @@ const QRcodeReview = ({ inputUrl, checkValid, nameDownload }) => {
                     fgColor={color}
                     bgColor={bgColor}
                 />
-                <div className="w-full flex flex-row justify-around bg-white">
-                    <Button className="mt-4" onClick={handleConvertLinkToQRcode}>
+                <div className="bg-white">
+                    <Button className="mt-4 mr-1" onClick={handleConvertLinkToQRcode}>
                         Xác nhận
                     </Button>
                     <Button className="mt-4" onClick={handleDownloadImageQRcode}>
-                        {/* <a href={url} download={`${nameDownload || "anhQRcode"}.png`} className="no-underline text-white"> */}
-                        Download
-                        {/* </a> */}
-                    </Button>
+                        Tải xuống
+                    </Button>   
                 </div>
             </div>
 
