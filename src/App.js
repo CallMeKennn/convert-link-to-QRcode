@@ -4,7 +4,8 @@ import Logo from "./Component/Logo";
 import QRcodeReview from "./Component/QRcodeReview";
 
 import { faGrip } from "@fortawesome/free-solid-svg-icons";
-import { TextField, Box } from "@mui/material";
+import { TextField } from "@mui/material";
+import { faMicroblog } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ImagesProvider from "./Component/ImageProvider";
 
@@ -67,7 +68,7 @@ function App() {
                                 </button>
                                 <div className="w-0.5 bg-gray-400"></div>
                                 <button onClick={handleMountLogoComponent}>
-                                    <FontAwesomeIcon icon={faGrip} />
+                                    <FontAwesomeIcon icon={faMicroblog} />
                                     <div className="font-robotoCondensed">Logo</div>
                                 </button>
                             </div>

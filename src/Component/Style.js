@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import squaresImage from "../Assets/Images/squares.png";
 import dotsImage from "../Assets/Images/dots.png";
