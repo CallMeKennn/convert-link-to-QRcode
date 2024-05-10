@@ -33,9 +33,9 @@ const Logo = () => {
     };
 
     return (
-        <div className="logo-containe mt-7">
-            <div className="flex ml-4 w-4/5">
-                <button className="w-2/12 p-2 border border-black ">
+        <div className="logo-containe mt-7 ">
+            <div className="flex flex-wrap ml-4 w-4/5 ">
+                <button className="w-16 p-2 border border-black ">
                     <img
                         src={closeImage}
                         className="w-full h-auto object-cover object-center m-0"
@@ -43,7 +43,7 @@ const Logo = () => {
                         alt="Close"
                     />
                 </button>
-                <button className="w-2/12 p-2 border border-black ">
+                <button className="w-16 p-2 border border-black ">
                     <label htmlFor="upload-button" className="upload-button ">
                         <input
                             onChange={handleImageChange}
@@ -56,7 +56,7 @@ const Logo = () => {
                         alt="Add"/>
                     </label>
                 </button>
-                <button className="w-2/12 p-2 border border-black ">
+                <button className="w-16 p-2 border border-black ">
                     <img
                         src={facebookLogo}
                         className="w-full h-auto object-cover object-center m-0"
@@ -64,7 +64,7 @@ const Logo = () => {
                         alt="Facebook"
                     />
                 </button>
-                <button className="w-2/12 p-2 border border-black ">
+                <button className="w-16 p-2 border border-black ">
                     <img
                         src={instagramLogo}
                         className="w-full h-auto object-cover object-center m-0"
@@ -72,7 +72,7 @@ const Logo = () => {
                         alt="Instagram"
                     />
                 </button>
-                <button className="w-2/12 p-2 border border-black ">
+                <button className="w-16 p-2 border border-black ">
                     <img
                         src={linkedinLogo}
                         className="w-full h-auto object-cover object-center m-0"
@@ -80,7 +80,7 @@ const Logo = () => {
                         alt="LinkedIn"
                     />
                 </button>
-                <button className="w-2/12 p-2 border border-black ">
+                <button className="w-16 p-2 border border-black ">
                     <img
                         src={pinterestLogo}
                         className="w-full h-auto object-cover object-center m-0"
@@ -88,7 +88,7 @@ const Logo = () => {
                         alt="Pinterest"
                     />
                 </button>
-                <button className="w-2/12 p-2 border border-black ">
+                <button className="w-16 p-2 border border-black ">
                     <img
                         src={twitterLogo}
                         className="w-full h-auto object-cover object-center m-0"
@@ -96,7 +96,7 @@ const Logo = () => {
                         alt="Twitter"
                     />
                 </button>
-                <button className="w-2/12 p-2 border border-black ">
+                <button className="w-16 p-2 border border-black ">
                     <img
                         src={youtubeLogo}
                         className="w-full h-auto object-cover object-center m-0"

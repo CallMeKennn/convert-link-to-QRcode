@@ -15,7 +15,7 @@ import youtubeLogo from "../Assets/Images/youtube-logo.png";
 
 const QRcodeReview = ({ inputUrl, checkValid, nameDownload }) => {
     const imageRef = useRef(null);
-    const [url, setUrl] = useState(window.location.href);
+    const [url, setUrl] = useState("https://inoste.vn/");
 
     const { imageUrl, size, checked, qrStyle, borderEye, eye, color, bgColor } = useContext(ImagesContext);
 
@@ -89,7 +89,7 @@ const QRcodeReview = ({ inputUrl, checkValid, nameDownload }) => {
     return (
         <div className="QRcode-container">
             <h1 className="text-center font-robotoCondensed">XEM TRƯỚC</h1>
-            <div className="w-full flex flex-column items-center flex-wrap">
+            <div className="w-full flex flex-column items-center flex-wrap ">
                 <QRCode
                     ref={imageRef}
                     value={url}
@@ -105,7 +105,7 @@ const QRcodeReview = ({ inputUrl, checkValid, nameDownload }) => {
                     fgColor={color}
                     bgColor={bgColor}
                 />
-                <div className="bg-white">
+                <div className="md:flex md:flex-col">
                     <Button className="mt-4 mr-1" onClick={handleConvertLinkToQRcode}>
                         Xác nhận
                     </Button>

@@ -25,7 +25,7 @@ const Style = () => {
         <div className="style-container flex flex-col items-center">
             <div className="mt-2 w-4/5 m-auto">
                 <div className="text-lg font-robotoCondensed">Mẫu:</div>
-                <div className="flex">
+                <div>
                     <button
                         className="w-16 p-2 border border-l-transparent border-black"
                         onClick={() => handleChangeQrStyle("squares")}
