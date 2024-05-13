@@ -7,6 +7,8 @@ module.exports = {
                 robotoCondensed: ["Roboto Condensed", "sans-serif"],
             },
             screens: {
+                "less": { min: "0px", max: "359px" },
+
                 sm: { max: "767px" },
                 // => @media (min-width: 640px and max-width: 767px) { ... }
 

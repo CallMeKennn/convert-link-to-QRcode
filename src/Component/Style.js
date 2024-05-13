@@ -89,7 +89,7 @@ const Style = () => {
                         id="colorPicker"
                         name="colorPicker"
                         onChange={(e) => handleChangeColor(e.target.value)}
-                        className="w-2/3 h-14 border border-black p-1"
+                        className="w-2/3 h-14 border border-black p-1 less:mt-7"
                     />
                 </div>
                 <div className="w-full">

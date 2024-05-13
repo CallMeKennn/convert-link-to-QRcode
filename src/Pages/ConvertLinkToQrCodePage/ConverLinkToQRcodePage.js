@@ -38,7 +38,7 @@ const ConverLinkToQRcodePage = () => {
     return (
         <>
             <div className="w-10/12 flex justify-around py-8 px-4 lg:w-full md:w-full sm:w-full">
-                <div className="w-2/3 h-auto bg-white px-8 pt-5 pb-8 rounded box-shadow sm:w-full">
+                <div className="w-2/3 h-auto bg-white px-8 pt-5 pb-8 rounded box-shadow sm:w-full sm:px-0">
                     <div className="d-flex flex-column align-items-center">
                         <h1 className="font-robotoCondensed mb-3 text-center">CHUYỂN ĐỔI LINK SANG MÃ QR CODE</h1>
                         <div className="w-11/12">
