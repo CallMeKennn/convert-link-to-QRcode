@@ -38,7 +38,7 @@ const ConverLinkToQRcodePage = () => {
     return (
         <>
             <div className="w-10/12 flex justify-around py-8 px-4 lg:w-full md:w-full sm:w-full">
-                <div className="col-8 h-auto bg-white px-8 pt-5 pb-8 rounded box-shadow sm:col-span-12">
+                <div className="w-2/3 h-auto bg-white px-8 pt-5 pb-8 rounded box-shadow sm:w-full">
                     <div className="d-flex flex-column align-items-center">
                         <h1 className="font-robotoCondensed mb-3 text-center">CHUYỂN ĐỔI LINK SANG MÃ QR CODE</h1>
                         <div className="w-11/12">
@@ -61,7 +61,7 @@ const ConverLinkToQRcodePage = () => {
                             />
                         </div>
 
-                        <div className="pt-5 pb-8 bg-white h-auto md:hidden lg:hidden xl:hidden 2xl:hidden">
+                        <div className="pb-8 bg-white h-auto md:hidden lg:hidden xl:hidden 2xl:hidden">
                             <QRcodeReview nameDownload={nameDownload} inputUrl={url} checkValid={handleValidUrlField} />
                         </div>
 
