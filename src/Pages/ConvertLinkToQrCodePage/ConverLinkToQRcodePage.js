@@ -12,9 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Styles.css"
-
-
+import "./Styles.css";
 
 const ConverLinkToQRcodePage = () => {
     const [nameDownload, setNameDownload] = useState("");
@@ -39,8 +37,8 @@ const ConverLinkToQRcodePage = () => {
 
     return (
         <>
-            <div className="w-10/12 flex justify-around py-8 px-4 lg:w-full">
-                <div className="col-8 h-auto bg-white px-8 pt-5 pb-8 rounded box-shadow">
+            <div className="w-10/12 flex justify-around py-8 px-4 lg:w-full md:w-full sm:w-full">
+                <div className="col-8 h-auto bg-white px-8 pt-5 pb-8 rounded box-shadow sm:col-span-12">
                     <div className="d-flex flex-column align-items-center">
                         <h1 className="font-robotoCondensed mb-3 text-center">CHUYỂN ĐỔI LINK SANG MÃ QR CODE</h1>
                         <div className="w-11/12">
@@ -63,6 +61,10 @@ const ConverLinkToQRcodePage = () => {
                             />
                         </div>
 
+                        <div className="pt-5 pb-8 bg-white h-auto md:hidden lg:hidden xl:hidden 2xl:hidden">
+                            <QRcodeReview nameDownload={nameDownload} inputUrl={url} checkValid={handleValidUrlField} />
+                        </div>
+
                         <div className="d-flex w-56 d-flex justify-content-around text-lg">
                             <button onClick={handleMountStyleComponent} className="">
                                 <FontAwesomeIcon icon={faGrip} />
@@ -80,7 +82,7 @@ const ConverLinkToQRcodePage = () => {
                     {isLogoComponent && <Logo />}
                 </div>
 
-                <div className="col-3 pt-5 pb-8 bg-white box-shadow h-auto">
+                <div className="col-3 pt-5 pb-8 bg-white box-shadow h-auto sm:hidden">
                     <QRcodeReview nameDownload={nameDownload} inputUrl={url} checkValid={handleValidUrlField} />
                 </div>
             </div>

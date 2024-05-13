@@ -7,13 +7,13 @@ module.exports = {
                 robotoCondensed: ["Roboto Condensed", "sans-serif"],
             },
             screens: {
-                sm: { min: "640px", max: "767px" },
+                sm: { max: "767px" },
                 // => @media (min-width: 640px and max-width: 767px) { ... }
 
-                md: { max: "1023px" },
+                md: { min: "768px", max: "1023px" },
                 // => @media (min-width: 768px and max-width: 1023px) { ... }
 
-                lg: { max: "1279px" },
+                lg: { min: "1024px", max: "1279px" },
                 // => @media (min-width: 1024px and max-width: 1279px) { ... }
 
                 xl: { min: "1280px", max: "1535px" },
